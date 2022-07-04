@@ -8,10 +8,13 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+   
 </head>
-<body>
-    <main>
 
+<body>
+
+    <main>
+        
         <div class="result">
             <h1>waiting for game</h1>
         </div>
@@ -23,16 +26,26 @@
                     <img src="./img/you.png" alt="You" width="170px">
                     <img src="./img/paper.png" alt="" width="165px">
                 </div>
-                <div class="vs">VS</div>
+                <div class="vs">
+                    <!-- <div class="start"><img src="./img/game.png" alt="Shifumi" width="185">choose<br>to play</div> -->
+                    VS
+                </div>
                 <div class="ai">
-                    <img src="./img/stone.png" alt="" width="165px">
+                    <div class="roulette">
+                        <div class="roulette_inner">
+                            <img src="./img/stone.png" alt="stone" width="165px">
+                            <img src="./img/paper.png" alt="paper" width="165px">
+                            <img src="./img/scissors.png" alt="scissors" width="165px">
+                        </div>
+                    </div>
+                    
                     <img src="./img/ai.png" alt="AI" width="200px">
                 </div>
             </div>
             <div class="choose">
-                <img src="./img/stone.png" alt="Stone" width="50px">
-                <img src="./img/paper.png" alt="Paper" width="50px">
-                <img src="./img/scissors.png" alt="Scissors" width="50px">
+                <img class="go active" src="./img/stone.png" alt="Stone" width="50px">
+                <img class="go active" src="./img/paper.png" alt="Paper" width="50px">
+                <img class="go active" src="./img/scissors.png" alt="Scissors" width="50px">
             </div>
         </div>
 
@@ -52,6 +65,7 @@
         </div>
 
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

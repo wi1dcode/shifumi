@@ -1,0 +1,68 @@
+html {
+    height: 100%;
+    background: linear-gradient(316deg, #1de4ff, #ff11b6, #a911ff);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:4% 0%}
+    50%{background-position:97% 100%}
+    100%{background-position:4% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:4% 0%}
+    50%{background-position:97% 100%}
+    100%{background-position:4% 0%}
+}
+
+/* font-family: 'Montserrat', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap');
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ******************** RESULT ******************** */
+
+.result {
+    width: 33%;
+    height: 100px;
+    background: rgba(205, 205, 205, 0.30);
+    backdrop-filter: blur(20px);
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result h1 {
+    color: #CDE2FF;
+    font-size: 55px;
+    text-transform: uppercase;
+}
+
+
+
+/* ******************** GAME ******************** */
+
+
+
+
+
+
+
+/* ******************** SCORE ******************** */
+
+
+
+
+
+
+
+/* ******************** WIN ******************** */
+

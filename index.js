@@ -1,42 +1,11 @@
-// jQuery.easing['easeOutCirc'] = function (x, t, b, c, d) {
-//     return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
-// }
-// $(function() {
-// var option = {
-//     speed: 6,
-//     duration: 3,
-//     stopImageNumber: 4
-// };
-
-// $(".go").click(function() {
-// $('.go').prop('disabled', true);
-// option.stopImageNumber = Math.random() * 11|0;
-// $(".roulette_inner img").removeClass("active");
-// $({
-//     left: 0
-// }).animate({
-//     left: 844 * option.speed + 75 * (option.stopImageNumber + 6)
-// }, {
-//     duration: option.duration * 1000,
-//     easing: "easeOutCirc",
-//     step: function(a) {
-//         $(".roulette_inner").css("transform", "translateX(-" + a % 500 + "px)");
-//     },
-//     complete: function() {
-//         $(".roulette_inner  img").eq(option.stopImageNumber + (option.stopImageNumber < 6) * 11).addClass("active");
-//         $('.go').prop('disabled', false);
-//     }
-// });
-// })
-// });
-
-
 let content = document.querySelector('.choose')
 let user_choice = document.querySelector(".user_roulette")
 let ai_choice = document.querySelector(".roulette")
 let vs = document.getElementById("vs")
 let show = document.getElementById("start_display")
 let roulette_i = document.querySelector(".roulette_inner")
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+let u_choice = document.querySelector(".user_inner")
 
 content.addEventListener("click", () => {
     if (show.style.display != "none" && vs.style.display != "none") {   
@@ -46,6 +15,17 @@ content.addEventListener("click", () => {
         ai_choice.style.display = "block"  
     } 
 })  
+
+stone.addEventListener("click", () => {
+    document.getElementsByClassName('user_inner')[0].style.left = '0px';
+})
+paper.addEventListener("click", () => {
+    document.getElementsByClassName('user_inner')[0].style.left = '-160px';
+})
+scissors.addEventListener("click", () => {
+    document.getElementsByClassName('user_inner')[0].style.left = '-330px';
+})
+
 
 // USER
 
@@ -69,3 +49,5 @@ content.addEventListener("click", () => {
 //     .roulette('option', option)
 //     .roulette('start');  
 // })
+
+

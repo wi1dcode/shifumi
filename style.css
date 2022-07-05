@@ -164,6 +164,11 @@ main {
     display: none;
 }
 
+.active_paper {
+    transition: 2s;
+    left: 165px;
+}
+
 .user_inner {
     position: relative; 
     top: 24px; 

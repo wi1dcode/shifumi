@@ -1,3 +1,26 @@
+
+
+let round = 0
+let playerScore = 0
+let aiScore = 0
+let playerSign
+let aiSign
+const signs = ["rock", "paper", "scissors"]
+
+const rockButton = document.getElementById("stone")
+const paperButton = document.getElementById("paper")
+const scissorsButton = document.getElementById("scissors")
+const player = document.getElementById("win")
+const ai = document.getElementById("lose")
+const playerScoreDOM = document.getElementById("player-score")
+const aiScoreDOM = document.getElementById("ai-score")
+// const gameHistory = document.getElementById("game-history")
+const empty = document.getElementById("empty")
+// const score = document.getElementById("score")
+const gameButtons = document.getElementsByClassName("game-buttons")
+const game = document.getElementById("game")
+
+
 let content = document.querySelector('.choose')
 let user_choice = document.querySelector(".user_roulette")
 let ai_choice = document.querySelector(".roulette")
@@ -18,14 +41,86 @@ content.addEventListener("click", () => {
 
 stone.addEventListener("click", () => {
     document.getElementsByClassName('user_inner')[0].style.left = '0px';
+    document.getElementsByClassName('user_inner')[0].style.transition = '0.5s';
+    return
 })
 paper.addEventListener("click", () => {
     document.getElementsByClassName('user_inner')[0].style.left = '-160px';
+    return
 })
 scissors.addEventListener("click", () => {
     document.getElementsByClassName('user_inner')[0].style.left = '-330px';
+    return
 })
 
+
+
+
+const doRound = sign => {
+    playerSign = sign
+    aiSign = chooseAiSign()
+    
+    displayImages()
+    round = round + 1
+    
+    if (playerSign === "stone") {
+      if (aiSign === "scissors") {
+        handlePlayerWin()
+      } else if (aiSign === "paper") {
+        handleAiWin()
+      } else {
+        handleDraw()
+      }
+    } else if (playerSign === 'paper') {
+      if (aiSign === "scissors") {
+        handleAiWin()
+      } else if (aiSign === "rock") {
+        handlePlayerWin()
+      } else {
+        handleDraw()
+      }
+    } else if (playerSign === 'scissors') {
+      if (aiSign === "rock") {
+        handleAiWin()
+      } else if (aiSign === "paper") {
+        handlePlayerWin()
+      } else {
+        handleDraw()
+      }
+    }
+  
+    updateScore()
+  }
+
+  const chooseAiSign = () => {
+    const index = Math.floor(Math.random() * 3)
+    const sign = signs[index]
+    return sign
+  }
+  
+  const handlePlayerWin = () => {
+    playerScore = playerScore + 1
+    console.log(handlePlayerWin);
+    // createHistoryRound("Gandalf l'emporte", "player")
+  }
+
+  const handleAiWin = () => {
+    aiScore = aiScore + 1
+    console.log(handleAiWin);
+    // createHistoryRound("Le robot l'emporte", "ai")
+  }
+
+  const updateScore = () => {
+    playerScoreDOM.innerHTML = playerScore
+    aiScoreDOM.innerHTML = aiScore
+  
+    // scroller l'historique en bas a chaque fois que l'on rajoute
+    // un round
+    gameHistory.scrollTop = 100000
+  
+  }
+  
+  console.log(chooseAiSign);
 
 // USER
 

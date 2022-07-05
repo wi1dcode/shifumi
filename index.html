@@ -16,7 +16,9 @@
     <main>
         
         <div class="result">
-            <h1>waiting for game</h1>
+            <h1 id="waiting">waiting for game</h1>
+            <h1 id="win">you win</h1>
+            <h1 id="lose">you lose</h1>
         </div>
 
         <div class="game">
@@ -40,9 +42,9 @@
                 <div class="ai">
                     <div class="roulette">
                         <div class="roulette_inner">
-                            <img src="./img/stone.png" alt="stone" width="165px">
-                            <img src="./img/paper.png" alt="paper" width="165px">
-                            <img src="./img/scissors.png" alt="scissors" width="165px">
+                            <img src="./img/stone.png" id="ai_stone" alt="stone" width="165px">
+                            <img src="./img/paper.png" id="ai_paper" alt="paper" width="165px">
+                            <img src="./img/scissors.png" id="ai_scissors" alt="scissors" width="165px">
                         </div>
                     </div>
                     
@@ -50,17 +52,17 @@
                 </div>
             </div>
             <div class="choose">
-                <img class="go" id="stone" src="./img/stone.png" onclick=myFunction(stone) alt="Stone" width="50px">
-                <img class="go" id="paper" src="./img/paper.png" onclick=myFunction(paper) alt="Paper" width="50px">
-                <img class="go" id="scissors" src="./img/scissors.png" onclick=myFunction(scissors) alt="Scissors" width="50px">
+                <img class="go" id="stone" src="./img/stone.png" alt="Stone" width="50px">
+                <img class="go" id="paper" src="./img/paper.png" alt="Paper" width="50px">
+                <img class="go" id="scissors" src="./img/scissors.png" alt="Scissors" width="50px">
             </div>
         </div>
 
         <div class="score">
             <div class="score_title"><h3>score</h3></div>
             <div class="points">
-                <h3>YOU: 0</h3>
-                <h3>AI: 0</h3>
+                <h3>YOU: <span id="player-score">0</span></h3>
+                <h3>AI: <span id="ai-score">0</span></h3>
             </div>
         </div>
 

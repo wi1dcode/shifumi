@@ -52,6 +52,17 @@ main {
 
 }
 
+#win {
+    display: none;
+}
+#lose {
+    display: none;
+}
+
+/* #waiting {
+    display: none;
+} */
+
 @keyframes h1 {
     0% { opacity: 1.0; }
     50% { opacity: 0.5; }
@@ -164,10 +175,6 @@ main {
     display: none;
 }
 
-.active_paper {
-    transition: 2s;
-    left: 165px;
-}
 
 .user_inner {
     position: relative; 
